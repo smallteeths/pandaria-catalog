@@ -10,12 +10,12 @@ questions:
   group: "Container Images"
   subquestions:
   - variable: image.repository
-    default: "cnrancher/webhook-receiver"
+    default: "dockerrrboy/webhook-receiver"
     description: "docker image name"
     type: string
     label: Image Name
   - variable: image.tag
-    default: "v0.1.6"
+    default: "latest"
     description: "docker image tag"
     type: string
     label: Image Tag
@@ -32,9 +32,32 @@ questions:
   group: Service
   subquestions:
   - variable: service.nodePort
-    default: 30030
+    default: 30040
     description: "nodePort, only valid when serviceType is NodePort, between 30000-32767"
     label: node port
     type: int
     min: 30000
     max: 32767
+- variable: config.providers.dingTalk.webhook_url
+  default: https://oapi.dingtalk.com/robot/send?access_token=6267a918f5882cdde4853732914d8dbaf336f9249b2b1efbed05a9b029e3d4e0
+  description: "providers Type"
+  label: providers dingTalk webhook_url
+  type: string
+  required: true
+  group: providers
+- variable: config.providers.dingTalk.secret
+  default: SEC9911e574dccb89e40bf4ca28de46e859b530605443646416e57e7e7e78906699
+  description: "providers Type"
+  label: providers dingTalk secret
+  type: string
+  required: true
+  group: providers
+- variable: config.receivers.test1.provider
+  default: dingtalk
+  description: "receivers Type"
+  label: receivers dingTalk secret
+  type: string
+  required: true
+  group: receivers
+
+
