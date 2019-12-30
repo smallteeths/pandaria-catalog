@@ -14,8 +14,6 @@ config:
     dingTalk:
       webhook_url: https://oapi.dingtalk.com/robot/send?access_token=6267a918f5882cdde4853732914d8dbaf336f9249b2b1efbed05a9b029e3d4e0
       secret: SEC9911e574dccb89e40bf4ca28de46e859b530605443646416e57e7e7e78906699
-    microsoft:
-      webhook_url: https://oapi.dingtalk.com/robot/send?access_token=6267a918f5882cdde4853732914d8dbaf336f9249b2b1efbed05a9b029e3d4e0
   receivers:
     test1:
       provider: dingtalk

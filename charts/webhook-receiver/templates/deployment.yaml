@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: webhook
+  name: webhook-receiver
   labels:
     app: webhook-receiver
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
