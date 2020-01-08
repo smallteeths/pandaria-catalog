@@ -10,7 +10,7 @@ questions:
   group: "Container Images"
   subquestions:
   - variable: image.repository
-    default: "dockerrrboy/webhook-receiver"
+    default: "dockerrrboy/webhook-test"
     description: "docker image name"
     type: string
     label: Image Name
@@ -32,7 +32,7 @@ questions:
   group: Service
   subquestions:
   - variable: service.nodePort
-    default: 30040
+    default: 30030
     description: "nodePort, only valid when serviceType is NodePort, between 30000-32767"
     label: node port
     type: int

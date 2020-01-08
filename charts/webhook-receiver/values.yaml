@@ -1,5 +1,5 @@
 image:
-  repository: "dockerrrboy/webhook-receiver"
+  repository: "dockerrrboy/webhook-test"
   tag: latest
 
 port: 9094
@@ -7,16 +7,20 @@ replicas: 1
 
 service:
   type: NodePort
-  nodePort: 30040
+  nodePort: 30030
 
 config:
-  providers:
-    dingTalk:
-      webhook_url: https://oapi.dingtalk.com/robot/send?access_token=6267a918f5882cdde4853732914d8dbaf336f9249b2b1efbed05a9b029e3d4e0
-      secret: SEC9911e574dccb89e40bf4ca28de46e859b530605443646416e57e7e7e78906699
-  receivers:
+  alerts:
     test1:
-      provider: dingtalk
+      dingtalk:
+        webhook_url: https://oapi.dingtalk.com/robot/send?access_token=6267a918f5882cdde4853732914d8dbaf336f9249b2b1efbed05a9b029e3d4e0
+        secret: SEC90a4cb2f44cbfb982a8f470f89937d9b74eb63b08959877a8a245c27b6fcf62f
+      # microsoft: 
+      #   webhook_url: webhook_url
+    test2:
+      dingtalk:
+        webhook_url: https://oapi.dingtalk.com/robot/send?access_token=df665667580b024c49600def6b03facd01b0badadbb4c18bcbd37c309c10b3b5
+        secret: SEC465520a9e3165b2664d5e7de24cfc8d9e48f3fcdfa74b97795f2c52f0e1f5457
 
 resources:
   limits:
