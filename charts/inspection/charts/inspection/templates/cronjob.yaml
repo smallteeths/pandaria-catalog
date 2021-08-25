@@ -1,0 +1,22 @@
+{{- if .Values.cronJob.enabled -}}
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: {{ .Release.Name }}-bot
+  namespace: {{ .Release.Namespace }}
+spec:
+  schedule: {{ .Values.cronJob.expr }}
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: {{ .Release.Name }}-bot
+              image: {{ .Values.cronJob.image }}
+              imagePullPolicy: IfNotPresent
+              command:
+                - /bin/sh
+                - -c
+                - curl -X POST {{ .Values.cronJob.action }}
+          restartPolicy: OnFailure
+{{- end -}}

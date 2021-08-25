@@ -1,0 +1,57 @@
+inspection:
+  enabled: true
+  image: dockerrrboy/inspection
+  imagePullPolicy: Always
+  claimName: ""
+
+  ui:
+    image: dockerrrboy/inspect-ui
+    imagePullPolicy: Always
+
+  polaris:
+    enabled: true
+    image: quay.io/fairwinds/polaris:3.1
+    imagePullPolicy: Always
+    resources:
+      core:
+        limits:
+          cpu: 150m
+          memory: 512Mi
+        requests:
+          cpu: 100m
+          memory: 128Mi
+    securityContext:
+      allowPrivilegeEscalation: false
+      privileged: false
+      readOnlyRootFilesystem: true
+      runAsNonRoot: true
+      capabilities:
+        drop:
+          - ALL
+
+  cronJob:
+    enabled: false
+    image: governmentpaas/curl-ssl
+    expr: "0 */1 * * *"
+    action: "http://inspection.inspection/v1/reports?action=createReport"
+
+  service:
+    type: NodePort
+
+node-problem-detector:
+  enabled: true
+  image: k8s.gcr.io/node-problem-detector/node-problem-detector:v0.8.8
+  systemLog: "/config/npd/kernel-monitor.json,/config/npd/docker-monitor.json"
+  systemStats: "/config/system-stats-monitor.json"
+  extraArgs: []
+  imagePullPolicy: Always
+  resources:
+    core:
+      limits:
+        cpu: 10m
+        memory: 80Mi
+      requests:
+        cpu: 10m
+        memory: 80Mi
+  securityContext:
+    privileged: true

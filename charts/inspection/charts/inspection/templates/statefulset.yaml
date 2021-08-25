@@ -1,0 +1,80 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ .Release.Name }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ .Chart.Name }}
+    version: {{ .Chart.Version }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Chart.Name }}
+      version: {{ .Chart.Version }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Chart.Name }}
+        version: {{ .Chart.Version }}
+    spec:
+      containers:
+        - name: {{ .Release.Name }}
+          image: {{ .Values.image }}
+          imagePullPolicy: {{ .Values.imagePullPolicy }}
+{{- if .Values.claimName }}
+          volumeMounts:
+            - mountPath: .db
+              name: sqlite
+{{- end }}
+        - name: {{ .Release.Name }}-ui
+          args:
+          - nginx
+          - -g
+          - daemon off;
+          - -c
+          - /nginx/nginx.conf
+          image: {{ .Values.ui.image }}
+          imagePullPolicy: {{ .Values.ui.imagePullPolicy }}
+          ports:
+            - name: http
+              containerPort: 8081
+              protocol: TCP
+          volumeMounts:
+            - name: inspection-nginx
+              mountPath: /nginx/
+{{- if .Values.polaris.enabled }}
+        - name: polaris
+          args:
+            - polaris
+            - dashboard
+            - -c
+            - /config/config.yaml
+          image: {{ .Values.polaris.image }}
+          imagePullPolicy: {{ .Values.polaris.imagePullPolicy }}
+          volumeMounts:
+            - name: polaris-config
+              mountPath: /config
+              readOnly: true
+{{- if and .Values.polaris.resources .Values.polaris.resources.core }}
+          resources:
+{{ toYaml .Values.polaris.resources.core | indent 12 }}
+{{- end }}
+{{- if .Values.polaris.securityContext }}
+          securityContext:
+{{ toYaml .Values.polaris.securityContext | indent 12 }}
+{{- end }}
+{{- end }}
+      serviceAccountName: {{ .Release.Name }}
+      volumes:
+        - name: inspection-nginx
+          configMap:
+            name: {{ .Release.Name }}-nginx
+        - name: polaris-config
+          configMap:
+            name: {{ .Release.Name }}-polaris
+{{- if .Values.claimName }}
+        - name: sqlite
+          persistentVolumeClaim:
+            claimName: {{ .Values.claimName }}
+{{- end }}

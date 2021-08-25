@@ -1,0 +1,10 @@
+dependencies:
+  - name: inspection
+    version: 0.0.1
+    condition: inspection.enabled
+    repository: "file://./charts/inspection/"
+
+  - name: node-problem-detector
+    version: 0.0.1
+    condition: node-problem-detector.enabled
+    repository: "file://./charts/node-problem-detector/"
