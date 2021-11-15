@@ -1,6 +1,6 @@
 inspection:
   enabled: true
-  image: dockerrrboy/inspection
+  image: cnrancher/inspection:v0.1.0
   imagePullPolicy: Always
   claimName: ""
 
