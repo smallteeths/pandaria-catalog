@@ -1,0 +1,24 @@
+replicaCount: 1
+image:
+  repository: cnrancher/global-monitoring-ui
+  tag: 0.0.8
+  pullPolicy: IfNotPresent
+apiToken: ""
+serverUrl: "http://rancher.cattle-system"
+title: ""
+tabTitle: ""
+favicon: ""
+logo: ""
+resources:
+  limits:
+    memory: 300Mi
+    cpu: 300m
+  requests:
+    memory: 50Mi
+    cpu: 50m
+affinity: {}
+nodeSelector: {}
+tolerations: []
+service:
+  type: ClusterIP
+  port: 80
