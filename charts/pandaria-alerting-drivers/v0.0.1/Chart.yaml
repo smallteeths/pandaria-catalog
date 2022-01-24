@@ -1,0 +1,7 @@
+apiVersion: v1
+description: Pandaria alerting drivers for Prometheus
+name: pandaria-alerting-drivers
+version: 0.0.1
+keywords:
+- alert
+- prometheus
