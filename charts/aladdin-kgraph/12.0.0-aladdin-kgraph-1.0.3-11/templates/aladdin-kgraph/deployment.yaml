@@ -1,0 +1,97 @@
+{{- if .Values.aladdinKgraph.enabled -}}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: {{ template "name" . }}
+    chart: {{ .Chart.Version }}
+    heritage: {{ .Release.Service }}
+    release: {{ .Release.Name }}
+    component: "{{ .Values.aladdinKgraph.name }}"
+  name: {{ .Values.aladdinKgraph.name }}
+spec:
+  selector:
+    matchLabels:
+        app: {{ template "name" . }}
+        component: "{{ .Values.aladdinKgraph.name }}"
+        release: {{ .Release.Name }}
+  replicas: {{ .Values.aladdinKgraph.replicaCount }}
+  template:
+    metadata:
+    {{- if .Values.aladdinKgraph.podAnnotations }}
+      annotations:
+{{ toYaml .Values.aladdinKgraph.podAnnotations | indent 8 }}
+    {{- end }}
+      labels:
+        app: {{ template "name" . }}
+        component: "{{ .Values.aladdinKgraph.name }}"
+        release: {{ .Release.Name }}
+    spec:
+      imagePullSecrets:
+        - name: "{{ .Values.aladdinKgraph.image.registrySecret }}"
+
+      containers:
+        - name: {{ .Values.aladdinKgraph.name }}
+          image: "{{ .Values.aladdinKgraph.image.repository }}:{{ .Values.aladdinKgraph.image.tag }}"
+          imagePullPolicy: "{{ .Values.aladdinKgraph.image.pullPolicy }}"
+          env:
+            {{- range $key, $value := .Values.global.env }}
+            - name: {{ $key }}
+              value: {{ $value }}
+            {{- end }}
+            {{- range $key, $value := .Values.aladdinKgraph.env }}
+            - name: {{ $key }}
+              value: {{ $value }}
+            {{- end }}
+          {{- if .Values.aladdinKgraph.command }}
+          command:
+{{ toYaml .Values.aladdinKgraph.command | indent 12 }}
+          {{- end }}
+          {{- if .Values.aladdinKgraph.args }}
+          args:
+{{ toYaml .Values.aladdinKgraph.args | indent 12 }}
+          {{- end }}
+          {{- if .Values.aladdinKgraph.ports }}
+          ports:
+{{ toYaml .Values.aladdinKgraph.ports | indent 12 }}
+          {{- end }}
+          {{- if .Values.aladdinKgraph.resources }}
+          resources:
+{{ toYaml .Values.aladdinKgraph.resources | indent 12 }}
+          {{- end }}
+          {{- if .Values.aladdinKgraph.volumeMounts }}
+          volumeMounts:
+{{ toYaml .Values.aladdinKgraph.volumeMounts | indent 12 }}
+          {{- end }}
+          {{- if .Values.aladdinKgraph.readinessProbe }}
+          readinessProbe:
+{{ toYaml .Values.aladdinKgraph.readinessProbe | indent 12 }}
+          {{- end }}
+          {{- if .Values.aladdinKgraph.livenessProbe }}
+          livenessProbe:
+{{ toYaml .Values.aladdinKgraph.livenessProbe | indent 12 }}
+          {{- end }}
+    {{- if .Values.aladdinKgraph.nodeSelector }}
+      nodeSelector:
+{{ toYaml .Values.aladdinKgraph.nodeSelector | indent 8 }}
+    {{- end }}
+    {{- if .Values.aladdinKgraph.tolerations }}
+      tolerations:
+{{ toYaml .Values.aladdinKgraph.tolerations | indent 8 }}
+    {{- end }}
+    {{- if .Values.aladdinKgraph.affinity }}
+      affinity:
+{{ toYaml .Values.aladdinKgraph.affinity | indent 8 }}
+    {{- else }}
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+{{ toYaml .Values.global.nodeAffinity | indent 14 }}
+    {{- end }}
+    {{- if .Values.aladdinKgraph.volumes }}
+      volumes:
+{{ toYaml .Values.aladdinKgraph.volumes | indent 8 }}
+    {{- end }}
+{{- end -}}

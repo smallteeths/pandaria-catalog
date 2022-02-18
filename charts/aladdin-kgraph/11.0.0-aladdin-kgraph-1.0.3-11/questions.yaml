@@ -1,0 +1,49 @@
+categories:
+  - aladdin
+questions:
+  - default: "http://consul"
+    description: "Consul Server Host, http/https and port should be included."
+    label: "consul-server"
+    required: true
+    type: string
+    variable: global.env.CONSUL_SERVER
+    group: "consul"
+  - default: ""
+    description: "Consul login token"
+    label: "consul-login-token"
+    required: true
+    type: string
+    variable: global.env.CONSUL_TOKEN
+    group: "consul"
+  - default: "/container/aladdin/aladdin-kgraph-CI/latest/"
+    description: "consul path eg: /container/bdp/spider-CI/latest/"
+    label: "consul-path-folder"
+    required: false
+    type: string
+    variable: global.env.OVERWRITE_CONSUL_PATH_FOLDER
+    group: "consul"
+
+  - default: "10m"
+    label: "resources.requests.cpu"
+    required: false
+    type: string
+    variable: aladdinKgraph.resources.requests.cpu
+    group: "aladdinKgraph resources"
+  - default: "100Mi"
+    label: "resources.requests.mem"
+    required: false
+    type: string
+    variable: aladdinKgraph.resources.requests.memory
+    group: "aladdinKgraph resources"
+  - default: "2"
+    label: "resources.limits.cpu"
+    required: false
+    type: string
+    variable: aladdinKgraph.resources.limits.cpu
+    group: "aladdinKgraph resources"
+  - default: "4Gi"
+    label: "resources.limits.mem"
+    required: false
+    type: string
+    variable: aladdinKgraph.resources.limits.memory
+    group: "aladdinKgraph resources"

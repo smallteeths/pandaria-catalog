@@ -1,0 +1,32 @@
+global:
+  nodeAffinity:
+    - key: nodeProject
+      operator: In
+      values:
+      - Ams
+  env:
+    CONSUL_SERVER: ""
+    CONSUL_TOKEN: ""
+    OVERWRITE_CONSUL_PATH_FOLDER: ""
+
+aladdinKgraph:
+  enabled: true
+  image:
+    pullPolicy: IfNotPresent
+    repository: registry.datayes.com/aladdin-proj/aladdin-kgraph
+    tag: 1.0.1-7
+    registrySecret: reg-secret
+  name: aladdin-kgraph
+  replicaCount: 1
+  service:
+    ports:
+    - port: 8080
+      protocol: TCP
+      name: tcp8080
+  resources:
+    requests:
+      cpu: 20m
+      memory: 400Mi
+    limits:
+      cpu: 2
+      memory: 4Gi

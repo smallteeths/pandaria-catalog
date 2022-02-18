@@ -1,0 +1,10 @@
+name: aladdin-kgraph
+version: 1.0.0-aladdin-kgraph-1.0.0-2
+description: aladdin-kgraph
+engine: gotpl
+keywords:
+  - aladdin-kgraph
+maintainers:
+  - email: lee@datayes.com
+    name: Ponyes Auto
+icon: file://../catalogIcon.png

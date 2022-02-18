@@ -1,0 +1,20 @@
+{{- if .Values.aladdinKgraph.enabled -}}
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: {{ template "name" . }}
+    chart: {{ .Chart.Version }}
+    heritage: {{ .Release.Service }}
+    release: {{ .Release.Name }}
+    component: "{{ .Values.aladdinKgraph.name }}"
+  name: {{ .Values.aladdinKgraph.name }}
+spec:
+  ports:
+{{ toYaml .Values.aladdinKgraph.service.ports | indent 4 }}
+  selector:
+    app: {{ template "name" . }}
+    release: {{ .Release.Name }}
+    component: "{{ .Values.aladdinKgraph.name }}"
+  type: {{ .Values.aladdinKgraph.service.type | default "ClusterIP" }}
+{{- end -}}
