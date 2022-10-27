@@ -93,16 +93,16 @@ entries:
       catalog.cattle.io/scope: management
     apiVersion: v2
     appVersion: 1.0.2
-    created: "2022-10-27T10:28:47.304808+08:00"
+    created: "2022-10-27T13:42:32.22015+08:00"
     description: A Helm chart for provisioning ACK clusters
-    digest: a974c68729bc5027792bd540ed7b327d3302be308eaa68616a529a2477d69755
+    digest: 0456acd2887dd71a4d7e792ce38273c37c6d7d0e023cbe91aeb35600fbe3306e
     home: https://github.com/cnrancher/ack-operator
     name: rancher-ack-operator
     sources:
     - https://github.com/cnrancher/ack-operator
     urls:
-    - assets/rancher-ack-operator/rancher-ack-operator-100.0.1+up1.0.2.tgz
-    version: 100.0.1+up1.0.2
+    - assets/rancher-ack-operator/rancher-ack-operator-0.0.2.tgz
+    version: 0.0.2
   - annotations:
       catalog.cattle.io/auto-install: rancher-ack-operator-crd=match
       catalog.cattle.io/certified: rancher
@@ -115,16 +115,16 @@ entries:
       catalog.cattle.io/scope: management
     apiVersion: v2
     appVersion: 1.0.1
-    created: "2022-10-27T10:29:43.002069+08:00"
+    created: "2022-10-27T13:44:46.584952+08:00"
     description: A Helm chart for provisioning ACK clusters
-    digest: eb834bff3fb1f10f41919aa5b335d2b9c2adddadeb73ddd16af2b11aed658894
+    digest: cfbb15c094cbc5c6b3698ce90a46c39308fd5590e893bf4f756a300436f88efa
     home: https://github.com/cnrancher/ack-operator
     name: rancher-ack-operator
     sources:
     - https://github.com/cnrancher/ack-operator
     urls:
-    - assets/rancher-ack-operator/rancher-ack-operator-100.0.0+up1.0.1.tgz
-    version: 100.0.0+up1.0.1
+    - assets/rancher-ack-operator/rancher-ack-operator-0.0.1.tgz
+    version: 0.0.1
   rancher-ack-operator-crd:
   - annotations:
       catalog.cattle.io/certified: rancher
@@ -134,13 +134,13 @@ entries:
       catalog.cattle.io/release-name: rancher-ack-operator-crd
     apiVersion: v2
     appVersion: 1.0.2
-    created: "2022-10-27T10:31:59.935084+08:00"
+    created: "2022-10-27T13:40:09.086069+08:00"
     description: ACK Operator CustomResourceDefinitions
-    digest: f502faa03513e609d1f7c54745c059b96a4c0fc69254861fb403d6014732f58b
+    digest: 362b214d5885c87806a7d00ef62722cdcd195da1438595814f8c6d464139fc1e
     name: rancher-ack-operator-crd
     urls:
-    - assets/rancher-ack-operator-crd/rancher-ack-operator-crd-100.0.1+up1.0.2.tgz
-    version: 100.0.1+up1.0.2
+    - assets/rancher-ack-operator-crd/rancher-ack-operator-crd-0.0.2.tgz
+    version: 0.0.2
   - annotations:
       catalog.cattle.io/certified: rancher
       catalog.cattle.io/hidden: "true"
@@ -149,13 +149,13 @@ entries:
       catalog.cattle.io/release-name: rancher-ack-operator-crd
     apiVersion: v2
     appVersion: 1.0.1
-    created: "2022-10-27T10:29:43.003476+08:00"
+    created: "2022-10-27T13:41:18.473128+08:00"
     description: ACK Operator CustomResourceDefinitions
-    digest: 986faa4b5c9bbee8f31191758a5e25d5d180ebf13ec7bc1414aa234012585cce
+    digest: 811d09134c824e6047d4f4ae99398900fa76c36c82f68900818e2a31d81c9095
     name: rancher-ack-operator-crd
     urls:
-    - assets/rancher-ack-operator-crd/rancher-ack-operator-crd-100.0.0+up1.0.1.tgz
-    version: 100.0.0+up1.0.1
+    - assets/rancher-ack-operator-crd/rancher-ack-operator-crd-0.0.1.tgz
+    version: 0.0.1
   rancher-aks-operator:
   - annotations:
       catalog.cattle.io/auto-install: rancher-aks-operator-crd=match
@@ -171,16 +171,16 @@ entries:
       catalog.cattle.io/scope: management
     apiVersion: v2
     appVersion: 1.0.6
-    created: "2022-10-27T10:28:47.428568+08:00"
+    created: "2022-10-27T13:42:32.375922+08:00"
     description: A Helm chart for provisioning AKS clusters
-    digest: 3008faad0f93753c4431c0e4b21c9d90df3e22f66dc172c9cd8da466237b95df
+    digest: fd63487d7b715ff4fe2b34b2e7d555cba86011e52c3e881a2f8e0ad21681279f
     home: https://github.com/rancher/aks-operator
     name: rancher-aks-operator
     sources:
     - https://github.com/rancher/aks-operator
     urls:
-    - assets/rancher-aks-operator/rancher-aks-operator-100.0.5+up1.0.6.tgz
-    version: 100.0.5+up1.0.6
+    - assets/rancher-aks-operator/rancher-aks-operator-0.0.6.tgz
+    version: 0.0.6
   rancher-aks-operator-crd:
   - annotations:
       catalog.cattle.io/certified: rancher
@@ -191,13 +191,13 @@ entries:
       catalog.cattle.io/release-name: rancher-aks-operator-crd
     apiVersion: v2
     appVersion: 1.0.6
-    created: "2022-10-27T10:28:47.505744+08:00"
+    created: "2022-10-27T13:42:32.443619+08:00"
     description: AKS Operator CustomResourceDefinitions
-    digest: ab2c35c3a83bf8cfdb1c6a81b8c4b9977b68bf99e7430cb6e9a5bfaf045459b6
+    digest: 32ebe8c214067b6bd9f41eb10ce6dc53c34939fe82a6549a9ad90aeee52d5c24
     name: rancher-aks-operator-crd
     urls:
-    - assets/rancher-aks-operator-crd/rancher-aks-operator-crd-100.0.5+up1.0.6.tgz
-    version: 100.0.5+up1.0.6
+    - assets/rancher-aks-operator-crd/rancher-aks-operator-crd-0.0.6.tgz
+    version: 0.0.6
   rancher-gpu-management:
   - apiVersion: v1
     appVersion: 0.1.0
