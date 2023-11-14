@@ -1,0 +1,17 @@
+global:
+  systemDefaultRegistry: ""
+
+ackOperator:
+  image:
+    repository: wangsiye/ack-operator
+    tag: mod
+
+httpProxy: ""
+httpsProxy: ""
+noProxy: ""
+additionalTrustedCAs: false
+leaderElect: true
+lockName: ""
+lockNamespace: ""
+qps: ""
+burst: ""
