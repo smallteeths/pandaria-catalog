@@ -4,7 +4,7 @@ global:
 ackOperator:
   image:
     repository: wangsiye/ack-operator
-    tag: sts2
+    tag: sts3
 
 httpProxy: ""
 httpsProxy: ""
