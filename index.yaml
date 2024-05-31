@@ -87,6 +87,29 @@ entries:
       catalog.cattle.io/scope: management
     apiVersion: v2
     appVersion: 1.1.0
+    created: "2024-05-29T15:31:43.546031+08:00"
+    description: A Helm chart for provisioning ACK clusters
+    digest: 0548f92d07ead21d750f933fb46f478318c98cf6dd3803e4471bb314d9043929
+    home: https://github.com/cnrancher/ack-operator
+    name: rancher-ack-operator
+    sources:
+    - https://github.com/cnrancher/ack-operator
+    urls:
+    - assets/rancher-ack-operator/rancher-ack-operator-103.0.1+up1.1.1.tgz
+    version: 103.0.1+up1.1.1
+  - annotations:
+      catalog.cattle.io/auto-install: rancher-ack-operator-crd=match
+      catalog.cattle.io/certified: rancher
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/kube-version: '>= 1.20.0-0 < 1.28.0-0'
+      catalog.cattle.io/namespace: cattle-system
+      catalog.cattle.io/os: linux
+      catalog.cattle.io/provides-gvr: ackclusterconfigs.ack.cattle.io/v1
+      catalog.cattle.io/rancher-version: '>= 2.8.0-0 < 2.9.0-0'
+      catalog.cattle.io/release-name: rancher-ack-operator
+      catalog.cattle.io/scope: management
+    apiVersion: v2
+    appVersion: 1.1.0
     created: "2023-11-15T13:38:29.267883+08:00"
     description: A Helm chart for provisioning ACK clusters
     digest: 5c4235035a9db1d7f2e7d1f28a64dc2374030573c58472a403d5881b69f9c8cf
@@ -236,6 +259,23 @@ entries:
     - assets/rancher-ack-operator/rancher-ack-operator-100.0.0+up1.0.1.tgz
     version: 100.0.0+up1.0.1
   rancher-ack-operator-crd:
+  - annotations:
+      catalog.cattle.io/certified: rancher
+      catalog.cattle.io/hidden: "true"
+      catalog.cattle.io/kube-version: '>= 1.20.0-0 < 1.28.0-0'
+      catalog.cattle.io/namespace: cattle-system
+      catalog.cattle.io/os: linux
+      catalog.cattle.io/rancher-version: '>= 2.8.0-0 < 2.9.0-0'
+      catalog.cattle.io/release-name: rancher-ack-operator-crd
+    apiVersion: v2
+    appVersion: 1.1.0
+    created: "2024-05-27T15:14:38.772599+08:00"
+    description: ACK Operator CustomResourceDefinitions
+    digest: 847fdf0a05fbcd7333e69c817c4585a3fffb3cf48f6b3eafd90467fd3f34a3d5
+    name: rancher-ack-operator-crd
+    urls:
+    - assets/rancher-ack-operator-crd/rancher-ack-operator-crd-103.0.1+up1.1.1.tgz
+    version: 103.0.1+up1.1.1
   - annotations:
       catalog.cattle.io/certified: rancher
       catalog.cattle.io/hidden: "true"
