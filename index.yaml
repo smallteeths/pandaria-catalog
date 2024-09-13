@@ -419,7 +419,7 @@ entries:
       catalog.cattle.io/auto-install: rancher-cce-operator-crd=match
       catalog.cattle.io/certified: rancher
       catalog.cattle.io/hidden: "true"
-      catalog.cattle.io/kube-version: '>= 1.25.0-0 < 1.31.0-0'
+      catalog.cattle.io/kube-version: '>= 1.27.0-0 < 1.31.0-0'
       catalog.cattle.io/namespace: cattle-system
       catalog.cattle.io/os: linux
       catalog.cattle.io/permits-os: linux
@@ -428,17 +428,17 @@ entries:
       catalog.cattle.io/release-name: rancher-cce-operator
       catalog.cattle.io/scope: management
     apiVersion: v2
-    appVersion: 0.5.0-rc3
-    created: "2024-07-23T15:37:46.251488625+08:00"
+    appVersion: 0.5.0
+    created: "2024-09-13T12:01:22.353846104+08:00"
     description: A Helm chart for provisioning CCE clusters
-    digest: 1f8e7620e81b7977791cc7fcd4d6f93117a574dc0450f9222a170a3231a94924
+    digest: e74168402a8fb85d6ee457a07cea1624b4b8cbaebd2ae5803bd17cdb45c97ee7
     home: https://github.com/cnrancher/cce-operator
     name: rancher-cce-operator
     sources:
     - https://github.com/cnrancher/cce-operator
     urls:
-    - assets/rancher-cce-operator/rancher-cce-operator-104.0.0+up0.5.0-rc3.tgz
-    version: 104.0.0+up0.5.0-rc3
+    - assets/rancher-cce-operator/rancher-cce-operator-104.0.0+up0.5.0.tgz
+    version: 104.0.0+up0.5.0
   - annotations:
       catalog.cattle.io/auto-install: rancher-cce-operator-crd=match
       catalog.cattle.io/certified: rancher
@@ -563,21 +563,21 @@ entries:
   - annotations:
       catalog.cattle.io/certified: rancher
       catalog.cattle.io/hidden: "true"
-      catalog.cattle.io/kube-version: '>= 1.25.0-0 < 1.31.0-0'
+      catalog.cattle.io/kube-version: '>= 1.27.0-0 < 1.31.0-0'
       catalog.cattle.io/namespace: cattle-system
       catalog.cattle.io/os: linux
       catalog.cattle.io/permits-os: linux
       catalog.cattle.io/rancher-version: '>= 2.9.0-0 < 2.10.0-0'
       catalog.cattle.io/release-name: rancher-cce-operator-crd
     apiVersion: v2
-    appVersion: 0.5.0-rc3
-    created: "2024-07-23T15:37:47.135525789+08:00"
+    appVersion: 0.5.0
+    created: "2024-09-13T12:03:36.837618799+08:00"
     description: CCE Operator CustomResourceDefinitions
-    digest: ff45f18098707629470cc90bc8de7f9ca95d559e56b398b43844d9522ae52648
+    digest: fdb6809be0dce4bfcb9053ff71545552eb6bc96a84c03b0f2a034c5df3ab0c10
     name: rancher-cce-operator-crd
     urls:
-    - assets/rancher-cce-operator-crd/rancher-cce-operator-crd-104.0.0+up0.5.0-rc3.tgz
-    version: 104.0.0+up0.5.0-rc3
+    - assets/rancher-cce-operator-crd/rancher-cce-operator-crd-104.0.0+up0.5.0.tgz
+    version: 104.0.0+up0.5.0
   - annotations:
       catalog.cattle.io/certified: rancher
       catalog.cattle.io/hidden: "true"
@@ -1088,9 +1088,9 @@ entries:
       catalog.cattle.io/type: cluster-tool
     apiVersion: v2
     appVersion: 0.10.0
-    created: "2024-09-05T10:43:41.407183934+08:00"
+    created: "2024-09-13T12:00:05.70910867+08:00"
     description: The Macvlan Networking For Rancher2.x
-    digest: 890db79f9ea458a0cadaa55044dc8cfbd7b0d9ed8d6e087634ab49d31b72f8f5
+    digest: 7fd42df84e7fbb7396acbbe73828b345cb2c50cf9b496b5f14539b1f632be7ad
     home: https://github.com/cnrancher
     keywords:
     - networking

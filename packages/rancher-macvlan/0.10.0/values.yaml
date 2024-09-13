@@ -30,7 +30,7 @@ image:
     tag: v0.10.0
   nadController:
     repository: cnrancher/k8s-net-attach-def-controller
-    tag: v0.5.0
+    tag: v0.5.1
   staticMacvlan:
     repository: cnrancher/static-macvlan-cni
     tag: v0.7.0
