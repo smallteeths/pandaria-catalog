@@ -8,6 +8,15 @@ RANCHER_VERSION="${RANCHER_VERSION:-}"
 BRANCH_NAME=${BRANCH_NAME:-$(git rev-parse --abbrev-ref HEAD)}
 if [[ -z "$RANCHER_VERSION" ]]; then
     case $BRANCH_NAME in
+        */v2.12)
+            RANCHER_VERSION="v2.9"
+            ;;
+        */v2.11)
+            RANCHER_VERSION="v2.9"
+            ;;
+        */v2.10)
+            RANCHER_VERSION="v2.9"
+            ;;
         */v2.9)
             RANCHER_VERSION="v2.9"
             ;;
