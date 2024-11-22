@@ -799,10 +799,10 @@ entries:
       catalog.cattle.io/release-name: rancher-flat-network
       catalog.cattle.io/type: cluster-tool
     apiVersion: v2
-    appVersion: 0.1.0-rc16
-    created: "2024-11-21T14:53:11.746417+08:00"
+    appVersion: 0.1.0
+    created: "2024-11-22T09:32:03.71469+08:00"
     description: Helm chart for managing rancher flat-network pods
-    digest: 3b49912eccc716050c27674b36363b481aa921d3b3fc32e8682400977be0fafa
+    digest: d54e588b2b90bd94f710381769fb165a0a9253640eb6da42422bdcc47d5c4ede
     home: https://github.com/cnrancher/rancher-flat-network
     maintainers:
     - email: starry.wang@suse.com
@@ -811,8 +811,8 @@ entries:
     sources:
     - https://github.com/cnrancher/rancher-flat-network
     urls:
-    - assets/rancher-flat-network/rancher-flat-network-104.0.1+up0.1.0-rc16.tgz
-    version: 104.0.1+up0.1.0-rc16
+    - assets/rancher-flat-network/rancher-flat-network-104.0.1+up0.1.0.tgz
+    version: 104.0.1+up0.1.0
   rancher-flat-network-crd:
   - annotations:
       catalog.cattle.io/certified: rancher
@@ -824,10 +824,10 @@ entries:
       catalog.cattle.io/rancher-version: '>= 2.9.3-alpha'
       catalog.cattle.io/release-name: rancher-flat-network-crd
     apiVersion: v2
-    appVersion: 0.1.0-rc16
-    created: "2024-11-21T14:53:12.895734+08:00"
+    appVersion: 0.1.0
+    created: "2024-11-22T09:32:04.528+08:00"
     description: Rancher FlatNetwork CustomResourceDefinitions
-    digest: 68011a7b615d17b65182c00a67f72f252ca91c08489463af6329200c056bd926
+    digest: 89e726f90c8a2ce121a36d783dfba7d73d7f239f2d1b27bd891ea3c75e69bef8
     home: https://github.com/cnrancher/rancher-flat-network
     maintainers:
     - email: starry.wang@suse.com
@@ -836,8 +836,8 @@ entries:
     sources:
     - https://github.com/cnrancher/rancher-flat-network
     urls:
-    - assets/rancher-flat-network-crd/rancher-flat-network-crd-104.0.1+up0.1.0-rc16.tgz
-    version: 104.0.1+up0.1.0-rc16
+    - assets/rancher-flat-network-crd/rancher-flat-network-crd-104.0.1+up0.1.0.tgz
+    version: 104.0.1+up0.1.0
   rancher-gpu-monitoring:
   - annotations:
       catalog.cattle.io/certified: rancher
