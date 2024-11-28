@@ -28,4 +28,7 @@ rmdir assets/${CHART} >/dev/null 2>&1
 rmdir assets >/dev/null 2>&1
 set -e
 
+touch release.yaml
+yq e -i ".${CHART} = ((.${CHART} + [\"${VERSION}\"]) | unique)" release.yaml
+
 make index
