@@ -22,6 +22,9 @@ var fakeFuncsMap = template.FuncMap{
 	"sha256sum":     fakeFunction,
 	"list":          fakeFunction,
 	"semverCompare": fakeFunction,
+	"nindent":       fakeFunction,
+	"trim":          fakeFunction,
+	"split":         fakeFunction,
 }
 
 func fakeFunction() string {
