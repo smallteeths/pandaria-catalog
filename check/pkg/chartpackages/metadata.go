@@ -2,12 +2,14 @@ package chartpackages
 
 import (
 	"archive/tar"
+	"bufio"
 	"bytes"
 	"fmt"
 	"io"
 	"os"
 	"os/exec"
 	"path/filepath"
+	"strings"
 
 	"github.com/klauspost/pgzip"
 	"github.com/sirupsen/logrus"
@@ -38,35 +40,36 @@ func LoadMetadataTgz(tgz io.Reader, patchFile string) (*chart.Metadata, error) {
 			if err != nil {
 				return nil, err
 			}
-			if patchFile != "" {
-				tmpDir, err := os.MkdirTemp("", "chart-check-*")
-				if err != nil {
-					return nil, fmt.Errorf("mkdirTemp failed: %w", err)
-				}
-				tmpFile, err := os.Create(filepath.Join(tmpDir, fileName))
-				if err != nil {
-					return nil, fmt.Errorf("os.Create failed: %w", err)
-				}
-				_, err = tmpFile.Write(data)
-				if err != nil {
-					return nil, fmt.Errorf("write failed: %w", err)
-				}
-
-				tmpFile.Close()
-				if err = ApplyPatch(patchFile, tmpDir); err != nil {
-					return nil, fmt.Errorf("failed to apply patch: %w", err)
-				}
-				data, err = os.ReadFile(filepath.Join(tmpDir, fileName))
-				if err != nil {
-					return nil, fmt.Errorf("failed to read file: %w", err)
-				}
-				os.RemoveAll(tmpDir)
-				logrus.Infof("Applied patch: %v", patchFile)
-			}
 			metadata := new(chart.Metadata)
 			if err := k8sYaml.Unmarshal(data, metadata); err != nil {
 				return metadata, fmt.Errorf("can not load Chart.yaml: %w", err)
 			}
+
+			if patchFile != "" {
+				f, err := os.Open(patchFile)
+				if err != nil {
+					return nil, fmt.Errorf("failed to open %q: %w", patchFile, err)
+				}
+				sc := bufio.NewScanner(f)
+				sc.Split(bufio.ScanLines)
+				for sc.Scan() {
+					line := sc.Text()
+					// Only get the chart name changes from patch file
+					if !strings.Contains(line, "+name: ") {
+						continue
+					}
+					spec := strings.Split(line, "+name: ")
+					for _, s := range spec {
+						if s == "" {
+							continue
+						}
+						metadata.Name = strings.TrimSpace(s)
+						logrus.Infof("update chart name [%v] from patch %v", s, patchFile)
+						break
+					}
+				}
+			}
+
 			return metadata, nil
 		default:
 			continue
