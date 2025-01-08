@@ -111,7 +111,7 @@ spec:
         lifecycle:
           preStop:
             exec:
-              command: ["/bin/sh", "-c", "rm -f /host/etc/cni/net.d/00-multus.conf"]
+              command: ["/bin/sh", "-c", "rm -f /host/etc/cni/net.d/00-multus.con*"]
         resources:
           requests:
             cpu: "100m"
