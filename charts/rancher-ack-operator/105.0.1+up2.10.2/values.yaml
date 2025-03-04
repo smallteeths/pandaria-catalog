@@ -4,8 +4,8 @@ global:
 
 ackOperator:
   image:
-    repository: cnrancher/ack-operator
-    tag: v2.10.2-ent
+    repository: wangsiye/ack-operator
+    tag: v2.10.2-rc2
 
 httpProxy: ""
 httpsProxy: ""
