@@ -372,9 +372,9 @@ entries:
       catalog.cattle.io/release-name: rancher-ack-operator-crd
     apiVersion: v2
     appVersion: 2.10.2
-    created: "2025-03-04T14:33:11.948791+08:00"
+    created: "2025-03-05T10:07:38.352441+08:00"
     description: ACK Operator CustomResourceDefinitions
-    digest: 370cb38cd915d7454980801e40d126d18e2046df7b00a2c2b51c6d152ebc7f75
+    digest: 48dd1bacf789fc2170cfbef7998d7662f43acd2366c6924d47c437da7b1b9a97
     name: rancher-ack-operator-crd
     urls:
     - assets/rancher-ack-operator-crd/rancher-ack-operator-crd-105.0.1+up2.10.2.tgz
