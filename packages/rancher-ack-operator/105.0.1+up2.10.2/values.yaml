@@ -1,6 +1,5 @@
 global:
-  cattle:
-    systemDefaultRegistry: ""
+  systemDefaultRegistry: ""
 
 ackOperator:
   image:
