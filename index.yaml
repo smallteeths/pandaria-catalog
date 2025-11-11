@@ -1,25 +1,24 @@
 apiVersion: v1
 entries:
-  mcs-extension-ui:
+  mcs-ext-chart:
   - annotations:
-      catalog.cattle.io/certified: rancher
-      catalog.cattle.io/namespace: cattle-ui-plugin-system
+      catalog.cattle.io/display-name: Multi-cluster Service Addon
+      catalog.cattle.io/kube-version: '>= 1.23.0-0'
+      catalog.cattle.io/namespace: mcs-addon-system
       catalog.cattle.io/os: linux
-      catalog.cattle.io/permits-os: linux, windows
-      catalog.cattle.io/rancher-version: '>= 2.12.0'
-      catalog.cattle.io/scope: management
-      catalog.cattle.io/ui-component: plugins
-      catalog.cattle.io/ui-extensions-version: '>= 3.0.0 < 4.0.0'
+      catalog.cattle.io/permits-os: linux
+      catalog.cattle.io/rancher-version: '>= 2.10.0-0 < 2.13.0-0'
+      catalog.cattle.io/ui-component: mcs-ext-chart
     apiVersion: v2
-    appVersion: 107.0.1
-    created: "2025-11-11T16:29:09.910741+08:00"
-    description: multi-cluster-service-extension-ui plugin
-    digest: 2e915288ad29e078fe6bd8157ef9b6f96f5923bf9c5e133fd44a575b7115cea6
-    name: mcs-extension-ui
-    type: application
+    appVersion: f608f37
+    created: "2025-11-11T16:35:06.510194+08:00"
+    description: Multi-cluster Service Extension Chart
+    digest: b6c664dafc61576cb019a6d5f590246bae077abb4d8d132134fccfa7de05be0b
+    icon: https://pub-68160d88f4744423960a290fc7a5031d.r2.dev/mcs-icon.png
+    name: mcs-ext-chart
     urls:
-    - assets/mcs-extension-ui/mcs-extension-ui-107.0.1.tgz
-    version: 107.0.1
+    - assets/mcs-ext-chart/mcs-ext-chart-0.0.1.tgz
+    version: 0.0.1
   pandaria-alerting-drivers:
   - annotations:
       catalog.cattle.io/display-name: Pandaria Alerting Drivers
