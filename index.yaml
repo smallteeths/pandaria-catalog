@@ -10,10 +10,10 @@ entries:
       catalog.cattle.io/rancher-version: '>= 2.10.0-0 < 2.13.0-0'
       catalog.cattle.io/ui-component: mcs-ext-chart
     apiVersion: v2
-    appVersion: f608f37
-    created: "2025-11-12T11:09:44.502189+08:00"
+    appVersion: 0.0.1
+    created: "2025-11-12T11:49:49.38436+08:00"
     description: Multi-cluster Service Extension Chart
-    digest: 9ac65c181f08bac77143bf9f6c70bedefcb38a75c7d4e661c1444e7acadbe513
+    digest: fbf745f0b6ac3f24482b1ef583b547adf610eae1972122187ca818d4fdd8b66a
     icon: https://pub-68160d88f4744423960a290fc7a5031d.r2.dev/mcs-icon.png
     name: mcs-ext-chart
     urls:

@@ -16,7 +16,7 @@ mcs-addon:
     replicaCount: 1
     image:
       repository: cnrancher/mcs-addon-controller
-      tag: f608f37
+      tag: 1893229
       pullPolicy: IfNotPresent
 submariner-operator:
   enabled: true
