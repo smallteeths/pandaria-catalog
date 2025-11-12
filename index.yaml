@@ -11,9 +11,9 @@ entries:
       catalog.cattle.io/ui-component: mcs-ext-chart
     apiVersion: v2
     appVersion: 0.0.1
-    created: "2025-11-12T11:49:49.38436+08:00"
+    created: "2025-11-12T11:53:15.16196+08:00"
     description: Multi-cluster Service Extension Chart
-    digest: fbf745f0b6ac3f24482b1ef583b547adf610eae1972122187ca818d4fdd8b66a
+    digest: 271ea764f8c01ddb14e56df6ef0b8e216b467d65fa3b01585e1bac6fee339c8e
     icon: https://pub-68160d88f4744423960a290fc7a5031d.r2.dev/mcs-icon.png
     name: mcs-ext-chart
     urls:
