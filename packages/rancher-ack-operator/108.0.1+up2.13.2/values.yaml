@@ -1,11 +1,11 @@
 global:
   cattle:
-    systemDefaultRegistry: ""
+    systemDefaultRegistry: "docker.io"
 
 ackOperator:
   image:
     repository: wangsiye/ack-operator
-    tag: v2.13.3-ent  
+    tag: amd64-13
 
 httpProxy: ""
 httpsProxy: ""
