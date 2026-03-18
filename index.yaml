@@ -82,9 +82,9 @@ entries:
       catalog.cattle.io/scope: management
     apiVersion: v2
     appVersion: 2.13.2
-    created: "2026-03-02T18:52:55.530377+08:00"
+    created: "2026-03-18T15:46:17.290076+08:00"
     description: A Helm chart for provisioning ACK clusters
-    digest: 8b1eff40b44badf27d45787014591c637a1da83ff85823ff557fc74b35622166
+    digest: 5dbfafbda18d1755e56c6b237a066161f8b72606e3696b82057563903696d5d2
     home: https://github.com/cnrancher/ack-operator
     name: rancher-ack-operator
     sources:
@@ -149,9 +149,9 @@ entries:
       catalog.cattle.io/release-name: rancher-ack-operator-crd
     apiVersion: v2
     appVersion: 2.13.2
-    created: "2026-03-02T18:52:55.548841+08:00"
+    created: "2026-03-18T15:46:17.310313+08:00"
     description: ACK Operator CustomResourceDefinitions
-    digest: 6bf8992b1c1a3684fd9e769dd10dca37a79c5815c38346e7b38d505b1a77f6d9
+    digest: 5f3330c295d6fc96e74b6da14c2a9892e3dec5178c6e34701d899c2840cb2d5d
     name: rancher-ack-operator-crd
     urls:
     - assets/rancher-ack-operator-crd/rancher-ack-operator-crd-108.0.1+up2.13.2.tgz
